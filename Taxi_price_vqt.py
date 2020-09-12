@@ -107,8 +107,8 @@ class MyWindow(QtWidgets.QWidget):
                 
     def result(self,name):
         try:
-            Pcity = (name[0]/name[2])*name[6] + (name[0] - name[7]*(name[0]/name[2]))*name[4]
-            Proute = (name[1]/name[3])*name[6] +(name[1] - name[7]*(name[1]/name[3]))*name[5]
+            Pcity = round((name[0]/name[2])*name[6] + (name[0] - name[7]*(name[0]/name[2]))*name[4],2)
+            Proute = round((name[1]/name[3])*name[6] +(name[1] - name[7]*(name[1]/name[3]))*name[5],2)
         except ZeroDivisionError:
             QtWidgets.QMessageBox.warning(window, 'Предупреждение', 'Введены недопустимые нулевые значения')
             return
